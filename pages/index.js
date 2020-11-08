@@ -1,65 +1,54 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// import CircularProgress from "@material-ui/core/CircularProgress";
+// import Drawer from "@material-ui/core/Drawer";
+// import Typography from "@material-ui/core/Typography";
+// import Grid from "@material-ui/core/Grid";
+// import Button from "@material-ui/core/Button";
+import withStyles from '@material-ui/core/styles/withStyles';
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+class Index extends React.Component {
+  state = {};
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+  render() {
+    return <div>Index</div>;
+  }
 }
+
+const styles = (theme) => ({
+  root: {
+    paddingTop: theme.spacing.unit * 10,
+    paddingLeft: theme.spacing.unit * 5,
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: theme.spacing.unit * 5,
+    },
+  },
+  progressContainer: {
+    height: '80vh',
+  },
+  progress: {
+    margin: theme.spacing.unit * 2,
+    color: theme.palette.secondary.light,
+  },
+  drawerContainer: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  drawer: {
+    width: 350,
+  },
+  drawerPaper: {
+    marginTop: 70,
+    width: 350,
+  },
+  fabButton: {
+    margin: theme.spacing.unit * 3,
+  },
+  heroContent: {
+    maxWidth: 600,
+    paddingTop: theme.spacing.unit * 8,
+    paddingBottom: theme.spacing.unit * 6,
+    margin: '0 auto',
+  },
+});
+
+export default withStyles(styles)(Index);
